@@ -48,10 +48,6 @@ const LoginForm = () => {
       </Typography>
       <form onSubmit={formik.handleSubmit}>
         <TextField
-          style={{
-            border: "1px solid black",
-            borderRadius: "5px",
-          }}
           fullWidth
           id="email"
           name="email"
@@ -66,10 +62,6 @@ const LoginForm = () => {
         />
 
         <TextField
-          style={{
-            border: "1px solid black",
-            borderRadius: "5px",
-          }}
           fullWidth
           id="password"
           name="password"
