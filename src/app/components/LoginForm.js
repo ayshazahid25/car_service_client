@@ -1,11 +1,24 @@
 "use client";
-// components/LoginForm.js
+
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
+import { styled } from "@mui/system";
 
 const LoginForm = () => {
+  const StyledPaper = styled(Paper)(({ theme }) => ({
+    background:
+      'linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url("https://images.hindustantimes.com/auto/img/2022/03/22/600x338/Mercedes-AMG-and-Palace-Skateboards-present-four-spectacular-Art-Cars_1647920918572_1647920929948.jpg")',
+    backgroundSize: "cover",
+    padding: theme.spacing(3),
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    minHeight: "80vh",
+  }));
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -16,14 +29,13 @@ const LoginForm = () => {
       password: Yup.string().required("Required"),
     }),
     onSubmit: (values) => {
-      // Handle form submission here
       console.log("Form submitted:", values);
     },
   });
 
   return (
-    <Paper
-      elevation={3}
+    <StyledPaper
+      elevation={10}
       style={{
         padding: "20px",
         maxWidth: "400px",
@@ -36,6 +48,10 @@ const LoginForm = () => {
       </Typography>
       <form onSubmit={formik.handleSubmit}>
         <TextField
+          style={{
+            border: "1px solid black",
+            borderRadius: "5px",
+          }}
           fullWidth
           id="email"
           name="email"
@@ -50,6 +66,10 @@ const LoginForm = () => {
         />
 
         <TextField
+          style={{
+            border: "1px solid black",
+            borderRadius: "5px",
+          }}
           fullWidth
           id="password"
           name="password"
@@ -73,7 +93,7 @@ const LoginForm = () => {
           Login
         </Button>
       </form>
-    </Paper>
+    </StyledPaper>
   );
 };
 

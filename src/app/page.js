@@ -1,12 +1,13 @@
 "use client";
 
 import LoginForm from "./components/LoginForm";
+import Card from "./components/Card";
 
 export default function Home() {
   return (
     <div style={{ textAlign: "center" }}>
-      <h1>Login Page</h1>
       <LoginForm />
+      <Card />
     </div>
   );
 }
